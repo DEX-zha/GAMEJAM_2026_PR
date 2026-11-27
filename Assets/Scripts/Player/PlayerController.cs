@@ -6,6 +6,7 @@ using PlayerInputActions = global::PlayerInput;
 public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float gravity = 9.81f;
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     private Vector2 _moveInput;
     private Vector2 _lookInput;
     private bool _jumpPressed;
+    private float _currentSpeed;
     private float _yaw;
     private float _pitch;
 
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
 
         _input = new PlayerInputActions();
         _input.Player.SetCallbacks(this);
+
+        _currentSpeed = moveSpeed;
     }
 
     private void OnEnable() => _input.Player.Enable();
@@ -61,8 +65,8 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         Vector3 moveDir = yawRotation * new Vector3(_moveInput.x, 0f, _moveInput.y);
         Vector3 velocity = _rb.linearVelocity;
 
-        velocity.x = moveDir.x * moveSpeed;
-        velocity.z = moveDir.z * moveSpeed;
+        velocity.x = moveDir.x * _currentSpeed;
+        velocity.z = moveDir.z * _currentSpeed;
 
         bool grounded = IsGrounded();
         if (_jumpPressed && grounded && velocity.y <= 0.1f)
@@ -100,5 +104,17 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         if (context.performed)
             _jumpPressed = true;
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _currentSpeed = runSpeed;
+        }
+        else if (context.canceled)
+        {
+            _currentSpeed = moveSpeed;
+        }
     }
 }
