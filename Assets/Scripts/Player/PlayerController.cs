@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using PlayerInputActions = global::PlayerInput;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
@@ -36,14 +36,34 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         _yaw = transform.eulerAngles.y;
 
         _input = new PlayerInputActions();
-        _input.Player.SetCallbacks(this);
+        _input.Player.Move.performed += OnMove;
+        _input.Player.Move.canceled += OnMove;
+        _input.Player.LookAround.performed += OnLookAround;
+        _input.Player.LookAround.canceled += OnLookAround;
+        _input.Player.Jump.performed += OnJump;
+        _input.Player.Run.performed += OnRun;
+        _input.Player.Run.canceled += OnRun;
 
         _currentSpeed = moveSpeed;
     }
 
     private void OnEnable() => _input.Player.Enable();
     private void OnDisable() => _input.Player.Disable();
-    private void OnDestroy() => _input?.Dispose();
+
+    private void OnDestroy()
+    {
+        if (_input == null)
+            return;
+
+        _input.Player.Move.performed -= OnMove;
+        _input.Player.Move.canceled -= OnMove;
+        _input.Player.LookAround.performed -= OnLookAround;
+        _input.Player.LookAround.canceled -= OnLookAround;
+        _input.Player.Jump.performed -= OnJump;
+        _input.Player.Run.performed -= OnRun;
+        _input.Player.Run.canceled -= OnRun;
+        _input.Dispose();
+    }
 
     private void Update()
     {
