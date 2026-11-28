@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 170874474}
   - component: {fileID: 170874473}
   - component: {fileID: 170874472}
-  - component: {fileID: 170874475}
+  - component: {fileID: 170874476}
   m_Layer: 0
   m_Name: 'Cube '
   m_TagString: Untagged
@@ -232,7 +232,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170874470}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &170874475
+--- !u!114 &170874476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,9 +241,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 170874470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a8025c529574e9a9ff9cb95b7a369d, type: 3}
+  m_Script: {fileID: 11500000, guid: caba532912aa04c9a946a1e16a400400, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableElement
+  m_EditorClassIdentifier: Assembly-CSharp::BasicInteractableElement
   _hoverMaterial: {fileID: 2100000, guid: da5925af6eec84e6a9a92c5ebff44690, type: 2}
   _baseMaterial: {fileID: 0}
   _interactMaterial: {fileID: 0}
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 655508735}
   - component: {fileID: 655508734}
   - component: {fileID: 655508733}
-  - component: {fileID: 655508736}
+  - component: {fileID: 655508737}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -887,7 +887,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655508731}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &655508736
+--- !u!114 &655508737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -896,14 +896,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 655508731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a8025c529574e9a9ff9cb95b7a369d, type: 3}
+  m_Script: {fileID: 11500000, guid: caba532912aa04c9a946a1e16a400400, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableElement
+  m_EditorClassIdentifier: Assembly-CSharp::BasicInteractableElement
   _hoverMaterial: {fileID: 2100000, guid: da5925af6eec84e6a9a92c5ebff44690, type: 2}
   _baseMaterial: {fileID: 0}
-  _interactMaterial: {fileID: 2100000, guid: f2e2811d81440472d94cab096f5e32dc, type: 2}
+  _interactMaterial: {fileID: 0}
   isGrabbable: 0
-  isInteractable: 1
+  isInteractable: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 1017721137}
   - component: {fileID: 1017721136}
   - component: {fileID: 1017721139}
-  - component: {fileID: 1017721140}
+  - component: {fileID: 1017721141}
   m_Layer: 0
   m_Name: Grabable cube
   m_TagString: Untagged
@@ -1094,7 +1094,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1017721140
+--- !u!114 &1017721141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1103,9 +1103,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017721134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a8025c529574e9a9ff9cb95b7a369d, type: 3}
+  m_Script: {fileID: 11500000, guid: caba532912aa04c9a946a1e16a400400, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableElement
+  m_EditorClassIdentifier: Assembly-CSharp::BasicInteractableElement
   _hoverMaterial: {fileID: 2100000, guid: da5925af6eec84e6a9a92c5ebff44690, type: 2}
   _baseMaterial: {fileID: 0}
   _interactMaterial: {fileID: 2100000, guid: f2e2811d81440472d94cab096f5e32dc, type: 2}
