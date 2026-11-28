@@ -2,7 +2,8 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void OnHover();
-    public void OnGrab(Transform holdPoint);
-    public void OnThrow(Vector3 force);
+    void OnHover();
+    void OnHoverExit();
+    void OnGrab(Transform holdPoint);
+    void OnThrow(Vector3 force);
 }
