@@ -247,6 +247,7 @@ MonoBehaviour:
   _hoverMaterial: {fileID: 2100000, guid: da5925af6eec84e6a9a92c5ebff44690, type: 2}
   _baseMaterial: {fileID: 0}
   _interactMaterial: {fileID: 0}
+  _interactMaterialWhileGrabbed: {fileID: 0}
   isGrabbable: 0
   isInteractable: 0
 --- !u!1 &186431966
@@ -902,6 +903,7 @@ MonoBehaviour:
   _hoverMaterial: {fileID: 2100000, guid: da5925af6eec84e6a9a92c5ebff44690, type: 2}
   _baseMaterial: {fileID: 0}
   _interactMaterial: {fileID: 0}
+  _interactMaterialWhileGrabbed: {fileID: 0}
   isGrabbable: 0
   isInteractable: 0
 --- !u!1 &832575517
@@ -1109,6 +1111,7 @@ MonoBehaviour:
   _hoverMaterial: {fileID: 2100000, guid: da5925af6eec84e6a9a92c5ebff44690, type: 2}
   _baseMaterial: {fileID: 0}
   _interactMaterial: {fileID: 2100000, guid: f2e2811d81440472d94cab096f5e32dc, type: 2}
+  _interactMaterialWhileGrabbed: {fileID: 2100000, guid: e879079fd395d45038f73d61a736d770, type: 2}
   isGrabbable: 1
   isInteractable: 1
 --- !u!1 &1246747448

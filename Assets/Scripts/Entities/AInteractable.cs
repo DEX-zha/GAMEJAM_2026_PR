@@ -5,6 +5,7 @@ public abstract class AInteractable : MonoBehaviour, IInteractable
     [SerializeField] protected Material _hoverMaterial;
     [SerializeField] protected Material _baseMaterial;
     [SerializeField] protected Material _interactMaterial;
+    [SerializeField] protected Material _interactMaterialWhileGrabbed;
 
     [SerializeField] protected bool isGrabbable = true;
     [SerializeField] protected bool isInteractable = true;
@@ -50,7 +51,10 @@ public abstract class AInteractable : MonoBehaviour, IInteractable
     public virtual void OnInteract(bool isGrabbed)
     {
         _isInteracted = !_isInteracted;
-        SetMaterial(_isInteracted && _interactMaterial != null ? _interactMaterial : _baseMaterial);
+        if (isGrabbed && _interactMaterialWhileGrabbed != null)
+            SetMaterial(_isInteracted && _interactMaterialWhileGrabbed != null ? _interactMaterialWhileGrabbed : _baseMaterial);
+        else
+            SetMaterial(_isInteracted && _interactMaterial != null ? _interactMaterial : _baseMaterial);
     }
 
     protected virtual void SetMaterial(Material material)
